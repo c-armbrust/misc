@@ -7,7 +7,7 @@ sudo apt-get update
 sudo apt-get install g++-4.9
 
 # update the symbolic link
-cd /usr/bin
-rm g++
-ln -s g++-4.9 g++
+sudo cd /usr/bin
+sudo rm g++
+sudo ln -s g++-4.9 g++
 g++ -v # check version
