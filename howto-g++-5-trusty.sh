@@ -7,7 +7,7 @@ sudo apt-get update
 sudo apt-get install g++-5
 
 # update the symbolic link
-sudo cd /usr/bin
+cd /usr/bin
 sudo rm g++
 sudo ln -s g++-5 g++
 g++ -v # check version
