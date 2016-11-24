@@ -1,0 +1,22 @@
+//Add to ~/.profile:
+export SLOTS=/sys/devices/bone_capemgr.9/slots
+export PINS=/sys/kernel/debug/pinctrl/44e10800.pinmux/pins
+
+// update
+$ source ~/.profile
+
+// Damit die Umgebungsvariablen auch als superuser bekannt sind, logge ein als root und:
+# visudo
+// Füge unter Defaults  env_reset noch hinzu:
+Defaults  env_keep += "SLOTS"
+Defaults  env_keep += "PINS"
+// Speichere die Datei
+
+// DTO laden:
+$visudo su
+# echo BB-BONE-CRYPTO > $SLOTS
+
+// Prüfe mit
+# cat $SLOTS
+// und
+# dmesg | grep CRYPTO
