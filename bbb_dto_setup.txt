@@ -20,3 +20,14 @@ $visudo su
 # cat $SLOTS
 // und
 # dmesg | grep CRYPTO
+
+
+// Pfade zur .dts und daraus kompilierten .dto Datei:
+//
+/opt/source/bb.org-overlays/src/arm/BB-BONE-CRYPTO-00A0.dts
+
+/lib/firmware/BB-BONE-CRYPTO-00A0.dtbo
+
+
+// Kompilieren mit dem DTC:
+dtc -O dtb -o BB-BONE-CRYPTO-00A0.dtbo -b 0 -@ BB-BONE-CRYPTO-00A0.dts
